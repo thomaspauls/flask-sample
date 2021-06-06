@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
-    return "<h1>Hello world from Kubernetes!</h1>"
+    return "<h1>Hello world from Kubernetes!</h1> <h2>This section is to test cicd</h2>"
 
 
 if __name__ == '__main__':
