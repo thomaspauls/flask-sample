@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomswebapp
+  labels:
+    app: tomswebapp
+  namespace: default
+  annotations:
+    monitoring: "true"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tomswebapp
+  template:
+    metadata:
+      labels:
+        app: tomswebapp
+    spec:
+      containers:
+      - image: thomaspauls/python:latest
+        name: tomswebapp
+        ports:
+        - containerPort: 80
